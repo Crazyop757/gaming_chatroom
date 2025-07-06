@@ -4,6 +4,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BY4ZYW2PH1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BY4ZYW2PH1');
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GameMatch | Find Your Gaming Squad</title>
@@ -446,19 +454,19 @@
 </head>
 <body>
     <nav class="navbar">
-        <div class="logo">GameMatch</div>
+        <div class="logo">Buss<span>in</span></div>
         <div class="nav-links">
-            <a href="#">Home</a>
-            <a href="#">Games</a>
-            <a href="#">Chatrooms</a>
-            <a href="#">About Us</a>
+            <a href="dashboard.php">Home</a>
+            <?php if (isset($_SESSION['username'])): ?>
+            <a href="chatrooms.php">Chatrooms</a>
+            <?php endif; ?>
+            
+            <a href="about.php">About</a>
         </div>
-        
-        <?php if (isset($_SESSION['user_id'])): ?>
-        <a class="cta-button" href="logout.php">Logout</a>
-
+        <?php if (isset($_SESSION['username'])): ?>
+            <a class="cta-button" href="logout.php">Logout</a>
         <?php else: ?>
-            <a class="cta-button" href="login.php">LogIn</a>
+            <a class="cta-button" href="login.php">Login</a>
         <?php endif; ?>
     </nav>
     
@@ -526,15 +534,6 @@
             <div class="footer-section">
                 <h3>GameMatch</h3>
                 <p>Find your perfect gaming squad and never play alone again.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Games</a></li>
-                    <li><a href="#">Chatrooms</a></li>
-                    <li><a href="#">Sign Up</a></li>
-                </ul>
             </div>
             <div class="footer-section">
                 <h3>Support</h3>

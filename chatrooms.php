@@ -64,7 +64,7 @@ $conn->close();
     <nav class="navbar">
         <div class="logo">Game<span>Match</span></div>
         <div class="nav-links">
-            <a href="gamewithchat_backup.php">Home</a>
+            <a href="dashboard.php">Home</a>
             <a href="chatrooms.php">Chatrooms</a>
             <a href="about.php">About</a>
         </div>

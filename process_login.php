@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($password === $row['password']) {
             $_SESSION['username'] = $row['username'];
             $_SESSION['user_id'] = $row['user_id'];
-            header("Location: gamewithchat_backup.php");
+            header("Location: dashboard.php");
             $_SESSION['username'] = $username;
             exit();
         } else {

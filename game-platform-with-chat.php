@@ -50,7 +50,7 @@ while ($row = $res->fetch_assoc()) {
     <div class="navbar">
         <div class="logo">Game<span>Match</span></div>
         <div class="nav-links">
-            <a href="gamewithchat_backup.php">Home</a>
+            <a href="dashboard.php">Home</a>
             <a href="chatrooms.php">Chatrooms</a>
             <a href="about.php">About</a>
         </div>
@@ -202,6 +202,9 @@ while ($row = $res->fetch_assoc()) {
 
             <!-- Game Iframe Container (Initially Hidden) -->
             <div class="game-iframe-container" id="game-iframe-container">
+                <button id="back-button" style="position: absolute; top: 10px; left: 10px; z-index: 10; padding: 8px 12px; font-size: 16px; cursor: pointer;">
+        ← Back to Games
+    </button>
                 <iframe class="game-iframe" id="game-iframe" src="" title="Game"></iframe>
             </div>
         </div>
@@ -255,6 +258,7 @@ while ($row = $res->fetch_assoc()) {
         const gameIframe = document.getElementById('game-iframe');
         const gameTitle = document.getElementById('game-title');
         const actionButton = document.getElementById('action-button');
+         const backButton = document.getElementById('back-button');
 
         // Initialize WebSocket
         ws = new WebSocket('ws://localhost:8080');
@@ -353,12 +357,9 @@ while ($row = $res->fetch_assoc()) {
             });
         });
 
-        actionButton.addEventListener('click', () => {
-            if (actionButton.textContent === 'Back to Games') {
-                showGamesGrid();
-            } else if (gameIframeContainer.classList.contains('active')) {
-                toggleFullscreen();
-            }
+        backButton.addEventListener('click', () => {
+            console.log('Back button clicked'); 
+            showGamesGrid();
         });
     });
 </script>

@@ -393,10 +393,9 @@
     <nav class="navbar">
         <a href="#" class="logo">GameMatch</a>
         <div class="nav-links">
-            <a href="#">Home</a>
-            <a href="#">Games</a>
-            <a href="#">Chatrooms</a>
-            <a href="#">About Us</a>
+            <a href="dashboard.php">Home</a>
+            <a href="chatrooms.php">Chatrooms</a>
+            <a href="about.php">About Us</a>
         </div>
     </nav>
     

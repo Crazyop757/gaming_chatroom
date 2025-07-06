@@ -2,6 +2,6 @@
 session_start();
 session_unset();
 session_destroy();
-header("Location: gamewithchat_backup.php");
+header("Location: dashboard.php");
 exit();
 ?>
